@@ -1,12 +1,16 @@
 package com.in28minutes.learn_spring_framework.game;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
 public class GameRunner {
 	
 	GamingConsole game;
 
-	public GameRunner(GamingConsole marioGame) {
+	public GameRunner(@Qualifier("SuperContraGameQualifier") GamingConsole game) {
 		// TODO Auto-generated constructor stub
-		this.game = marioGame;
+		this.game = game;
 	}
 
 	public void run() {
